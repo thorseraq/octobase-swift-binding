@@ -44,7 +44,7 @@ jobs:
             ls -l apps/swift/OctoBaseSwift
         - uses: actions/upload-artifact@v3
           with:
-            name: my-artifact
+            name: swift-build-output
             path: apps/swift/OctoBaseSwift
         - uses: actions/checkout@v3
           with:
@@ -56,8 +56,8 @@ jobs:
             echo "current directory structure"
             ls -R
         - run: mkdir "$(pwd)/temp"
-        - uses: actions/upload-artifact@v3
+        - uses: actions/download-artifact@v3
           with:
-            name: my-artifact
-            path: "$(pwd)/temp"
-        - run: ls -R
+            name: swift-build-output
+            path: ~/swift-build-output
+        - run: ls -R ~/swift-build-output
