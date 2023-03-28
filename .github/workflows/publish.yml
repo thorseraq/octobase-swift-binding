@@ -64,10 +64,11 @@ jobs:
         - run: |
             ls -R ~/swift-build-output
             git status
-            git rm -rf RustXcframework Sources
-            git rm Package.swift
+            rm -rf RustXcframework Sources
+            rm Package.swift
             git status
             cp -r ~/swift-build-output .
+            ./scripts/bump-podspec-version.sh
             git status
             git config --global user.email "thorseraq@gmail.com"
             git config --global user.name "bot"
