@@ -73,4 +73,8 @@ jobs:
             git add . && git commit -m "temp"
             git status
             git remote -vv
-            git push https://github.com/thorseraq/octobase-swift-binding.git master
+        - name: Push changes
+          uses: ad-m/github-push-action@master
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            branch: ${{ github.ref }}
