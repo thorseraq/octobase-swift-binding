@@ -70,8 +70,7 @@ jobs:
             ./scripts/bump-podspec-version.sh
             git status
             git config --global user.email "thorseraq@gmail.com"
-            git config --global user.name "bot"
-            touch demo.txt
+            git config --global user.name ${{ github.actor }}
             git add . && git commit -m "bump version"
             git remote -vv
         - name: Push changes
