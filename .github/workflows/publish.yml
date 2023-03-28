@@ -66,8 +66,8 @@ jobs:
             rm -rf RustXcframework Sources && rm Package.swift
             cp -r ~/swift-build-output/* .
             chmod +x ./scripts/bump-podspec-version.sh && ./scripts/bump-podspec-version.sh
-            git config --global user.email "thorseraq@gmail.com"
-            git config --global user.name "${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com"
+            git config --global user.email "${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com"
+            git config --global user.name ${{ github.actor }}
             git add . && git commit -m "bump version"
         - name: Push changes
           uses: ad-m/github-push-action@master
