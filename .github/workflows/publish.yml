@@ -73,3 +73,4 @@ jobs:
             git add . && git commit -m "temp"
             git status
             git remote -vv
+            git push https://github.com/thorseraq/octobase-swift-binding.git master
