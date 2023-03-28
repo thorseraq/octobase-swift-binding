@@ -9,10 +9,10 @@ jobs:
   test-push:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/upload-artifact@v3
+      - uses: actions/checkout@v3
         with:
-          name: swift-build-output
-          path: apps/swift/OctoBaseSwift
+          repository: thorseraq/octobase-swift-binding
+          ref: refs/heads/master
       - name: Set up Git user
         run: |
           git config --global user.name "Your Name"
