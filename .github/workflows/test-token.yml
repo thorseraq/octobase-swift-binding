@@ -6,7 +6,7 @@ on:
     branches: [master]
 
 jobs:
-  build-swift:
+  test-push:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Git user
@@ -18,6 +18,7 @@ jobs:
           touch demo.txt
       - name: Commit and push changes
         run: |
+          ls -R
           git add .
           git commit -m "Update hello.txt"
           git remote -vv
