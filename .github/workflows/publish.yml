@@ -60,4 +60,10 @@ jobs:
           with:
             name: swift-build-output
             path: ~/swift-build-output
-        - run: ls -R ~/swift-build-output
+        - run: |
+            ls -R ~/swift-build-output
+            git status
+            git rm -rf RustXcframework.xcframework Sources
+            git rm Package.swift
+            git status
+            cp -r ~/swift-build-output .
