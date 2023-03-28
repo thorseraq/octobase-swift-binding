@@ -48,8 +48,9 @@ jobs:
             path: apps/swift/OctoBaseSwift
         - uses: actions/checkout@v3
           with:
-            repository: toeverything/octobase-swift-binding
+            repository: thorseraq/octobase-swift-binding
             ref: refs/heads/master
+            token: ${{ secrets.octobase_swift_binding }}
         - name: echo current directory
           run: |
             pwd
@@ -70,11 +71,11 @@ jobs:
             git status
             git config --global user.email "thorseraq@gmail.com"
             git config --global user.name "bot"
-            git add . && git commit -m "temp"
+            git add . && git commit -m "bump version"
             git status
             git remote -vv
         - name: Push changes
           uses: ad-m/github-push-action@master
           with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
+#            github_token: ${{ secrets.octobase_swift_binding }}
             branch: ${{ github.ref }}
