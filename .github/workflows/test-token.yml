@@ -13,7 +13,7 @@ jobs:
         with:
           repository: thorseraq/octobase-swift-binding
           ref: refs/heads/master
-          token: ${{ secrets.octobase_swift_binding }}
+#          token: ${{ secrets.octobase_swift_binding }}
       - name: Set up Git user
         run: |
           git config --global user.name "Your Name"
@@ -32,4 +32,4 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.octobase_swift_binding }}
-          branch: ${{ github.ref }}
+          ref: ${{ github.ref }}
