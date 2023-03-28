@@ -69,4 +69,5 @@ jobs:
             cp -r ~/swift-build-output .
             git status
             git add . && git commit -m "temp"
+            git status
             git remote -vv
