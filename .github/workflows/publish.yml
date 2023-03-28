@@ -2,6 +2,8 @@ name: Publish Swift Package
 
 on:
   workflow_dispatch:
+  push:
+    branches: [master]
 
 jobs:
   build-swift:
@@ -33,6 +35,7 @@ jobs:
           restore-keys: ${{ runner.os }}-cargo-
       - name: build swift
         run: |
+          rm -rf apps/swift/OctoBaseSwift
           cargo build -p jwst-swift-integrate --release
           cp -r apps/swift/OctoBaseSwift ~/swift-build-output
 #      - uses: actions/upload-artifact@v3
