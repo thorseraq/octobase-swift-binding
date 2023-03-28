@@ -50,7 +50,7 @@ jobs:
           with:
             repository: thorseraq/octobase-swift-binding
             ref: refs/heads/master
-            token: ${{ secrets.octobase_swift_binding }}
+#            token: ${{ secrets.octobase_swift_binding }}
         - name: echo current directory
           run: |
             pwd
