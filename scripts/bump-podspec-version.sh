@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "Bumping version in octobase.podspec..."
 
 podspec=$(cat ../octobase.podspec)
 current_version=$(echo "$podspec" | grep -oE 'spec\.version\s*=\s*"[0-9]+\.[0-9]+\.[0-9]+"' | awk -F'"' '{print $2}')
