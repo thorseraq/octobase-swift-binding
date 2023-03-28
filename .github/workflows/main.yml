@@ -1,0 +1,19 @@
+name: Publish Swift Package
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [master]
+
+jobs:
+  build-swift:
+    runs-on: ubuntu-latest
+    steps:
+        - uses: actions/checkout@master
+          with:
+            name: toeverything/Octobase
+            ref: refs/heads/master
+        - name: Run script
+          run: |
+            echo "echo directory"
+            ls -R
