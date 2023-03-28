@@ -64,7 +64,7 @@ jobs:
         - run: |
             ls -R ~/swift-build-output
             git status
-            git rm -rf RustXcframework.xcframework Sources
+            git rm -rf RustXcframework Sources
             git rm Package.swift
             git status
             cp -r ~/swift-build-output .
