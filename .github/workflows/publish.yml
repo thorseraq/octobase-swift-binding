@@ -18,7 +18,6 @@ jobs:
             pwd
             echo "current directory structure"
             ls -R
-          working-directory: ~
         - name: Install Rust
           uses: actions-rs/toolchain@v1
           with:
@@ -56,3 +55,9 @@ jobs:
             pwd
             echo "current directory structure"
             ls -R
+        - run: mkdir "$(pwd)/temp"
+        - uses: actions/upload-artifact@v3
+          with:
+            name: my-artifact
+            path: "$(pwd)/temp"
+        - run: ls -R
