@@ -68,6 +68,8 @@ jobs:
             git status
             cp -r ~/swift-build-output .
             git status
+            git config --global user.email "thorseraq@gmail.com"
+            git config --global user.name "bot"
             git add . && git commit -m "temp"
             git status
             git remote -vv
