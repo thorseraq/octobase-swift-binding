@@ -63,7 +63,7 @@ jobs:
             path: ~/swift-build-output
         - name: update swift package
           run: |
-            rm -rf RustXcframework Sources && rm Package.swift
+            git rm -rf RustXcframework Sources && rm Package.swift
             cp -r ~/swift-build-output/* .
             chmod +x ./scripts/bump-podspec-version.sh && ./scripts/bump-podspec-version.sh
             git config --global user.email "${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com"
