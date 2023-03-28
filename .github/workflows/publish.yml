@@ -67,7 +67,7 @@ jobs:
             rm -rf RustXcframework Sources
             rm Package.swift
             git status
-            cp -r ~/swift-build-output .
+            cp -r ~/swift-build-output/* .
             ./scripts/bump-podspec-version.sh
             git status
             git config --global user.email "thorseraq@gmail.com"
