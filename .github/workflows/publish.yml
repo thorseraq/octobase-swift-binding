@@ -18,6 +18,7 @@ jobs:
             pwd
             echo "current directory structure"
             ls -R
+          working-directory: ~
         - name: Install Rust
           uses: actions-rs/toolchain@v1
           with:
