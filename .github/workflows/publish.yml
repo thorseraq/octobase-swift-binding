@@ -9,9 +9,9 @@ jobs:
   build-swift:
     runs-on: ubuntu-latest
     steps:
-        - uses: actions/checkout@master
+        - uses: actions/checkout@v3
           with:
-            name: toeverything/Octobase
+            repository: toeverything/Octobase
             ref: refs/heads/master
         - name: Run script
           run: |
