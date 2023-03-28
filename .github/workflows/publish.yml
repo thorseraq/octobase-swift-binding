@@ -62,6 +62,7 @@ jobs:
             name: swift-build-output
             path: ~/swift-build-output
         - run: |
+            pwd
             ls -R ~/swift-build-output
             git status
             rm -rf RustXcframework Sources
