@@ -1,0 +1,13 @@
+name: Publish Swift Package
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [master]
+
+jobs:
+  build-swift:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Print GitHub Token
+          run: echo ${{ secrets.GITHUB_TOKEN }}
