@@ -36,7 +36,7 @@ jobs:
       - name: build swift
         run: |
           rm -rf apps/swift/OctoBaseSwift
-          cargo build -p jwst-swift-integrate --release
+          cargo run -p jwst-swift-integrate --release
           cp -r apps/swift/OctoBaseSwift ~/swift-build-output
 #      - uses: actions/upload-artifact@v3
 #        with:
