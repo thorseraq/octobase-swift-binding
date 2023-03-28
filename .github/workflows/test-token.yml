@@ -20,16 +20,16 @@ jobs:
           git config --global user.email "your-email@example.com"
       - name: Make changes
         run: |
-          touch demo4.txt
+          touch demo5.txt
       - name: Commit and push changes
         run: |
           ls -R
           git add .
-          git commit -m "create demo4.txt"
+          git commit -m "create demo5.txt"
 #          git remote -vv
 #          git push origin master
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.octobase_swift_binding }}
+#          github_token: ${{ secrets.octobase_swift_binding }}
           branch: ${{ github.ref }}
