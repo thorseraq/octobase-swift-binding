@@ -62,7 +62,7 @@ jobs:
             name: swift-build-output
             path: ~/swift-build-output
         - name: update swift package
-        - run: |
+          run: |
             rm -rf RustXcframework Sources && rm Package.swift
             cp -r ~/swift-build-output/* .
             chmod +x ./scripts/bump-podspec-version.sh && ./scripts/bump-podspec-version.sh
