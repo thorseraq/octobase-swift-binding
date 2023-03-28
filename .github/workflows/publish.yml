@@ -15,7 +15,8 @@ jobs:
             ref: refs/heads/master
         - name: echo current directory
           run: |
-            echo "echo directory"
+            pwd
+            echo "current directory structure"
             ls -R
         - name: Install Rust
           uses: actions-rs/toolchain@v1
@@ -41,3 +42,16 @@ jobs:
           run: |
             cargo build -p jwst-swift-integrate --release
             ls -l apps/swift/OctoBaseSwift
+        - uses: actions/upload-artifact@v3
+          with:
+            name: my-artifact
+            path: apps/swift/OctoBaseSwift
+        - uses: actions/checkout@v3
+          with:
+            repository: toeverything/octobase-swift-binding
+            ref: refs/heads/master
+        - name: echo current directory
+          run: |
+            pwd
+            echo "current directory structure"
+            ls -R
